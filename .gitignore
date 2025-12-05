@@ -1,6 +1,4 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# Node dependencies
 node_modules/
 
 # Expo
@@ -9,33 +7,41 @@ dist/
 web-build/
 expo-env.d.ts
 
-# Native
-.kotlin/
-*.orig.*
+# Native build system
+android/.gradle/
+android/app/build/
+android/build/
+ios/DerivedData/
+
+# DO NOT IGNORE android/ or ios/ folder itself
+# because native Kotlin modules are inside android/src/main/java
+
+# Keystore & sensitive files
 *.jks
+*.keystore
 *.p8
 *.p12
 *.key
 *.mobileprovision
 
-# Metro
+# Kotlin / Gradle misc
+*.orig.*
+*.lock
+
+# Metro bundler
 .metro-health-check*
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
 # macOS
 .DS_Store
 *.pem
 
-# local env files
+# Local env
 .env*.local
 
-# typescript
+# TypeScript
 *.tsbuildinfo
-
-# generated native folders
-/ios
-/android
